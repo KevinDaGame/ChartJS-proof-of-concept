@@ -1,0 +1,141 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<body>
+    <div>
+        <canvas id="myChart" width="1000px" height="300px"></canvas>
+    </div>
+    <div class="row">
+        <canvas id="barChart" width="400px" height="400px"></canvas>
+        <canvas id="pieChart" width="400px" height="400px"></canvas>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctx = document.getElementById('pieChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
+            datasets: [
+                {
+                    label: 'Dataset 1',
+                    data: [10, 30, 5, 15, 40],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                }
+            ]
+        },
+        options: {
+            responsive: false,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Chart.js Pie Chart'
+                }
+            }
+        }
+    })
+</script>
+
+<script>
+    var ctx = document.getElementById('barChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
+            datasets: [
+                {
+                    label: 'Dataset 1',
+                    data: [10, 30, 5, 15, 40],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                }
+            ]
+        },
+        options: {
+            responsive: false,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Chart.js Bar Chart'
+                }
+            }
+        }
+    })
+</script>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Shift 1', 'Shift 2'],
+            datasets: [{
+                label: "Te vroeg",
+                data: [-30, 0],
+                backgroundColor: "rgba(255, 0, 0, 1)",
+            },
+            {
+                label: "Op tijd",
+                data: [90, [10,100]],
+                backgroundColor: "rgba(8, 255, 0, 1)",
+            },
+            {
+                label: "Te laat",
+                data: [0, 10],
+                backgroundColor: "rgba(255, 0, 0, 1)",
+            }]
+
+        },
+        options: {
+            responsive: false,
+            maintainAspectRatio: false,
+            indexAxis: 'y',
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Medewerker in en uitkloktijd'
+                },
+            },
+            responsive: false,
+            scales: {
+                x: {
+                    stacked: true,
+                    ticks: {
+                        stepSize: 50,
+                    }
+                
+
+                },
+                y: {
+                    stacked: true,
+                   
+                },
+            },
+            legend: {
+                display: false,
+            }
+        }
+    })
+
+</script>
